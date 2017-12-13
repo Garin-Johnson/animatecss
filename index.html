@@ -1,1 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Animate.css</title>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+  <style>
+  #section-1{
+	animation-delay:1s;
+	/*animation-duration:5s;*/
+	/*animation-iteration-count:3;*/
+  }
+  
+  #section-2{
+	animation-delay:2s;
+  }
+  </style>
+  </head>
+  <body>
+  <div class="container">
+  <header class="animated rotateIn text-center  bg-primary text-white p-5">
+	<h1 class="display-4">Garin's Animate.css Sandbox</h1>
+  </header>
+  <section id="section-1" class="animated slideInLeft bg-faded p-5 my-3">
+  <h1>Section One</h1>
+  <p>
+  contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
 
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+  </p>
+  </section>
+  <section id="section-2" class="animated slideInRight bg-faded p-5 my-3" > 
+  
+  <h1 id="anim-head">Section Two</h1>
+  <p id="anim-body">
+  contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+  </p>
+  <button id="animateBtn" class="animated infinite bounce btn btn-primary">Click Me!</button>
+  </section>
+  
+  </div>
+    <script src="index.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+	
+	<script>
+	$(function(){
+	$("#animateBtn").click(function(){
+		animate("anim-head", "bounce");
+		animate("anim-body", "rubberBand");
+		
+		return false;
+	});
+	
+	//Animate
+	function animate(element, animation){
+		$(element).addClass("animated "+animation);
+		var wait = setTimeout(function(){
+		$(element).removeClass("animated "+animation);
+		}, 1000);
+	}
+	})
+	</script>
+	
+  </body>
+</html>
